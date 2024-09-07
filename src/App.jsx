@@ -1,0 +1,42 @@
+import { useEffect, useState } from "react";
+import "./App.css";
+import { Main } from "./components/Main";
+import { useDispatch } from "react-redux";
+import { editTodo } from "./redux/slices/todoSlice";
+
+function App() {
+  const dispatch=useDispatch()
+
+  const initialise = () => {
+    let localTodo = localStorage.getItem("TODO");
+    localTodo = JSON.parse(localTodo);
+
+    let arr = [];
+    localTodo.map((todo) => arr.push(JSON.parse(todo)));
+
+    let finalArray = [];
+
+    arr.map((todo) => {
+      finalArray.push(JSON.stringify(todo));
+    });
+
+    
+    dispatch(editTodo(arr));
+  };
+
+  initialise()
+
+  return (
+    <>
+      <div className="bg-green-500 h-[2rem]">header</div>
+
+      <div className="h-[calc(100vh-4rem)] ">
+        <Main />
+      </div>
+
+      <div className="h-[2rem] bg-green-500">footer</div>
+    </>
+  );
+}
+
+export default App;
