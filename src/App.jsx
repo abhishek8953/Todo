@@ -35,7 +35,7 @@ function App() {
         <Main />
       </div>
 
-      <div className="h-[2rem] bg-green-500">footer</div>
+      <div className="h-[2rem] bg-green-500">Made with <span style={{color:"purple"}}>&#9829</span></div>
     </>
   );
 }
