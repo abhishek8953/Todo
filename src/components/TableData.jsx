@@ -74,7 +74,7 @@ export const TableData = () => {
                 <Th>Functions</Th>
               </Tr>
             </Thead>
-            {todos.map((data, index) => {
+            {todos?.map((data, index) => {
               return (
                 <Tbody key={data.id}>
                   <Tr>

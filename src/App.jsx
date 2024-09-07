@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+
 import "./App.css";
 import { Main } from "./components/Main";
 import { useDispatch } from "react-redux";
@@ -9,6 +9,7 @@ function App() {
 
   const initialise = () => {
     let localTodo = localStorage.getItem("TODO");
+    if(!localTodo) return
     localTodo = JSON.parse(localTodo);
 
     let arr = [];

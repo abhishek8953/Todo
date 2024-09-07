@@ -25,13 +25,14 @@ export const EditDialog = ({ cancel, currentTodo }) => {
     }
 
     let localTodo = localStorage.getItem("TODO");
+    if(!localTodo) return
     localTodo = JSON.parse(localTodo);
 
     let arr = [];
-    localTodo.map((todo) => arr.push(JSON.parse(todo)));
+    localTodo?.map((todo) => arr.push(JSON.parse(todo)));
 
 
-    arr.map((todo)=>{
+    arr?.map((todo)=>{
       if(todo.id===currentTodo.id){
         todo.todo=change;
       }
@@ -40,7 +41,7 @@ export const EditDialog = ({ cancel, currentTodo }) => {
     let finalArray=[];
     
     
-    arr.map((todo)=>{
+    arr?.map((todo)=>{
       finalArray.push(JSON.stringify(todo))
     })
 
