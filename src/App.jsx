@@ -29,13 +29,13 @@ function App() {
 
   return (
     <>
-      <div className="bg-green-500 h-[2rem]">header</div>
+      <div className="bg-green-500 h-[2rem]"></div>
 
       <div className="h-[calc(100vh-4rem)] ">
         <Main />
       </div>
 
-      <div className="h-[2rem] bg-green-500">Made with <span style={{color:"purple"}}>&#9829</span></div>
+      <div className="h-[2rem] bg-green-500">Made with <span style={{color:"purple"}}> &#9829; </span></div>
     </>
   );
 }
